@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bybit AED Guide – ഗൈഡ്</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    /* ---- Header Banner ---- */
+    .banner {
+      background: linear-gradient(135deg, #1a1f35 0%, #2d3561 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      background: rgba(255,165,0,0.12);
+      border-radius: 50%;
+    }
+    .banner-logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #f7931a;
+      margin-bottom: 10px;
+    }
+    .banner h1 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .banner .ml-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 15px;
+      color: #a0aec0;
+      margin-top: 6px;
+    }
+    .prize-badge {
+      display: inline-block;
+      background: #f7931a;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-top: 14px;
+    }
+
+    /* ---- Section Card ---- */
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      border-left: 5px solid #f7931a;
+    }
+
+    .step-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff3e0;
+      color: #e65c00;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1f35;
+      margin-bottom: 6px;
+    }
+    .card .ml-title {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 15px;
+      color: #4a5568;
+      margin-bottom: 16px;
+    }
+
+    /* ---- Reward Box ---- */
+    .reward-box {
+      background: #fffbf0;
+      border: 1.5px solid #fbd38d;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+    .reward-box .reward-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: #b7791f;
+      margin-bottom: 6px;
+    }
+    .reward-box p {
+      font-size: 14px;
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .reward-box .ml-text {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 13.5px;
+      color: #744210;
+      background: #fef3c7;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-top: 8px;
+      line-height: 1.8;
+    }
+
+    /* ---- Info List ---- */
+    .info-list {
+      list-style: none;
+      padding: 0;
+    }
+    .info-list li {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #edf2f7;
+    }
+    .info-list li:last-child { border-bottom: none; }
+    .info-list .icon {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      background: #ebf8ff;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .info-list .text p {
+      font-size: 14px;
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 4px;
+    }
+    .info-list .ml-text {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 13px;
+      color: #2c5282;
+      background: #ebf8ff;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-top: 4px;
+      line-height: 1.8;
+      display: block;
+    }
+
+    /* ---- Warning Card ---- */
+    .card.warning {
+      border-left-color: #e53e3e;
+    }
+    .card.warning .step-label {
+      background: #fff5f5;
+      color: #c53030;
+    }
+
+    /* ---- Important Steps ---- */
+    .important-step {
+      background: #f7fafc;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      border: 1px solid #e2e8f0;
+    }
+    .important-step .step-num {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #e53e3e;
+      margin-bottom: 6px;
+    }
+    .important-step p {
+      font-size: 14px;
+      color: #2d3748;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .important-step p strong {
+      color: #1a202c;
+    }
+    .important-step .ml-text {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 13px;
+      color: #742a2a;
+      background: #fff5f5;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-top: 6px;
+      line-height: 1.9;
+      display: block;
+    }
+
+    /* ---- Pairs Grid ---- */
+    .pairs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .pair-chip {
+      background: #ebf8ff;
+      border: 1.5px solid #bee3f8;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 13px;
+      color: #2b6cb0;
+    }
+
+    /* ---- CTA Button ---- */
+    .cta-wrap {
+      text-align: center;
+      margin-top: 16px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f7931a, #e07b00);
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 13px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      letter-spacing: 0.4px;
+      box-shadow: 0 4px 14px rgba(247,147,26,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(247,147,26,0.5); }
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #25d366, #128c4a);
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 13px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      letter-spacing: 0.4px;
+      box-shadow: 0 4px 14px rgba(37,211,102,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .wa-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,211,102,0.5); }
+    .cta-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 13px;
+      color: #718096;
+      margin-top: 8px;
+    }
+
+    /* ---- VPN Screenshot Placeholder ---- */
+    .vpn-note {
+      background: #e9fce9;
+      border: 1.5px solid #9ae6b4;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #276749;
+      margin: 10px 0;
+    }
+    .vpn-note .ml-text {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 13px;
+      color: #22543d;
+      margin-top: 6px;
+      display: block;
+      line-height: 1.8;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #a0aec0;
+      line-height: 1.8;
+    }
+    .footer .ml-text {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 12px;
+      color: #a0aec0;
+      display: block;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .container { max-width: 100%; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== BANNER ===== -->
+  <div class="banner">
+    <div class="banner-logo">BYBIT MENA</div>
+    <h1>A New Era of Trading:<br>Trade in AED &amp; Unlock Double Rewards!</h1>
+    <div class="ml-sub">AED-ൽ ട്രേഡ് ചെയ്ത് ഇരട്ടി സമ്മാനം നേടാം!</div>
+    <div class="prize-badge">🏆 750,000 AED Prize Pool</div>
+  </div>
+
+  <!-- ===== STEP 1 ===== -->
+  <div class="card">
+    <div class="step-label">✦ Step One</div>
+    <h2>Deposit &amp; Earn — Marhaba AED Campaign</h2>
+    <div class="ml-title">ഡെപ്പോസിറ്റ് ചെയ്ത് സമ്മാനം നേടൂ</div>
+
+    <p style="font-size:14px;color:#4a5568;margin-bottom:16px;line-height:1.7;">
+      Fund your account via <strong>local UAE bank transfer</strong> and enjoy a welcome rewards package worth over <strong>300 AED</strong>!
+    </p>
+
+    <div class="reward-box">
+      <div class="reward-title">⚡ Instant Reward</div>
+      <p>Deposit <strong>400 AED</strong> and immediately receive <strong>200 AED (55 USDT)</strong> as an airdrop — credited to your account right away.</p>
+      <div class="ml-text">
+        400 AED ഡെപ്പോസിറ്റ് ചെയ്‌താൽ ഉടനടി 200 AED (55 USDT) നിങ്ങളുടെ അക്കൗണ്ടിൽ കിട്ടും. UAE-ലെ ഏത് ബാങ്കിൽ നിന്നും ലോക്കൽ ട്രാൻസ്ഫർ ആണ് ചെയ്യേണ്ടത്.
+      </div>
+    </div>
+
+    <div class="reward-box">
+      <div class="reward-title">🎯 Additional Tasks Reward</div>
+      <p>Complete <strong>buy &amp; referral tasks</strong> to boost your total deposit rewards to over <strong>300 AED</strong>.</p>
+      <div class="ml-text">
+        ഡെപ്പോസിറ്റ് ചെയ്ത ശേഷം ബൈ ടാസ്‌ക്കും റഫറൽ ടാസ്‌ക്കും പൂർത്തിയാക്കിയാൽ ആകെ 300 AED-ൽ കൂടുതൽ നേടാൻ കഴിയും.
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a class="cta-btn" href="https://www.bybit.com/en/promo/campaign/MarhabaAED/?affiliate_id=158391&group_id=1770852&group_type=1" target="_blank">
+        🚀 Join &amp; Deposit Now
+      </a>
+      <a class="wa-btn" href="https://wa.me/971582213303" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.535 5.845L.057 23.486a.75.75 0 00.959.906l5.85-1.523A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.952-1.352l-.355-.21-3.676.957.982-3.589-.231-.368A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        Contact on WhatsApp
+      </a>
+    </div>
+    <div class="cta-sub">ഇവിടെ ക്ലിക്ക് ചെയ്ത് ഡെപ്പോസിറ്റ് ആരംഭിക്കൂ · സംശയം ഉണ്ടെങ്കിൽ WhatsApp-ൽ ബന്ധപ്പെടൂ</div>
+  </div>
+
+  <!-- ===== STEP 2 ===== -->
+  <div class="card">
+    <div class="step-label">✦ Step Two</div>
+    <h2>Trade &amp; Earn — New AED Pairs Campaign</h2>
+    <div class="ml-title">ട്രേഡ് ചെയ്ത് കൂടുതൽ നേടൂ</div>
+
+    <p style="font-size:14px;color:#4a5568;margin-bottom:14px;line-height:1.7;">
+      Once your AED is in your account, start trading these pairs to participate in the <strong>50,000 USDT prize pool</strong>:
+    </p>
+
+    <div class="pairs-grid">
+      <div class="pair-chip">BTC / AED</div>
+      <div class="pair-chip">ETH / AED</div>
+      <div class="pair-chip">SOL / AED</div>
+      <div class="pair-chip">USDT / AED</div>
+    </div>
+
+    <ul class="info-list">
+      <li>
+        <div class="icon">🏆</div>
+        <div class="text">
+          <p><strong>50,000 USDT Prize Pool</strong> — shared among all active participants.</p>
+          <span class="ml-text">ആകെ 50,000 USDT പ്രൈസ് പൂൾ ഉണ്ട്. ട്രേഡ് ചെയ്യുന്ന എല്ലാവർക്കും ഇതിൽ നിന്ന് സമ്മാനം ലഭിക്കും.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon">📈</div>
+        <div class="text">
+          <p><strong>Ranking Rewards</strong> — the more you trade, the bigger your share. Individual rewards can reach up to <strong>150 USDT extra</strong> based on cumulative volume.</p>
+          <span class="ml-text">നിങ്ങൾ കൂടുതൽ ട്രേഡ് ചെയ്യുന്തോറും, കൂടുതൽ സമ്മാനം കിട്ടും. ഒരു വ്യക്തിക്ക് 150 USDT വരെ അധിക ആദായം ലഭിക്കാം.</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="btn-row" style="margin-top:14px;">
+      <a class="cta-btn" href="https://www.bybit.com/en/promo/campaign/MarhabaAED/?affiliate_id=158391&group_id=1770852&group_type=1" target="_blank">
+        📊 Register for Trading Event
+      </a>
+      <a class="wa-btn" href="https://wa.me/971582213303" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.535 5.845L.057 23.486a.75.75 0 00.959.906l5.85-1.523A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.952-1.352l-.355-.21-3.676.957.982-3.589-.231-.368A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        Contact on WhatsApp
+      </a>
+    </div>
+    <div class="cta-sub">ട്രേഡിങ് ഇവന്റ് രജിസ്‌ട്രേഷൻ · സംശയം ഉണ്ടെങ്കിൽ WhatsApp-ൽ ബന്ധപ്പെടൂ</div>
+  </div>
+
+  <!-- ===== DUBAI IMPORTANT ===== -->
+  <div class="card warning">
+    <div class="step-label" style="background:#fff5f5;color:#c53030;">⚠️ Important — For Those Living in Dubai</div>
+    <h2>Dubai-ൽ താമസിക്കുന്നവർ ശ്രദ്ധിക്കൂ</h2>
+    <p style="font-size:13.5px;color:#718096;margin:8px 0 20px;font-family:'Noto Sans Malayalam',sans-serif;line-height:1.8;">
+      ദുബൈയിൽ ഉള്ളവർ താഴെ പറയുന്ന 3 കാര്യങ്ങൾ ശ്രദ്ധിക്കണം:
+    </p>
+
+    <div class="important-step">
+      <div class="step-num">⚠️ Step 1 — Use a VPN First</div>
+      <p>Before registering on Bybit, <strong>connect to a VPN</strong>. You can use the free app <strong>X-VPN</strong>.<br>
+      ❌ Do <strong>NOT</strong> choose USA, Canada, or European countries as your VPN location.</p>
+      <span class="ml-text">
+        Bybit-ൽ അക്കൗണ്ട് ഉണ്ടാക്കുന്നതിന് <strong>മുമ്പ്</strong> VPN ഓൺ ചെയ്യുക.<br>
+        <strong>X-VPN</strong> എന്ന ഫ്രീ ആപ്പ് ഡൗൺലോഡ് ചെയ്ത് ഉപയോഗിക്കാം.<br>
+        ⚠️ VPN-ൽ US, Canada, അല്ലെങ്കിൽ European രാജ്യങ്ങൾ (Germany, France, etc.) <strong>തിരഞ്ഞെടുക്കരുത്</strong>.<br>
+        Norway, Lithuania, Finland, Australia, Poland — ഇവ ഉപയോഗിക്കാം.
+      </span>
+    </div>
+
+    <div class="important-step">
+      <div class="step-num">⚠️ Step 2 — KYC / Proof of Address</div>
+      <p>If you use a <strong>Dubai-issued Emirates ID</strong> for KYC, you will later be asked for a <strong>Proof of Address (POA)</strong>.<br>
+      ❌ Do <strong>NOT</strong> submit any document showing a <strong>Dubai address</strong>.<br>
+      ✅ Instead, submit a document with your <strong>home country address</strong> (e.g. a bank statement from back home).</p>
+      <span class="ml-text">
+        KYC-ക്ക് ദുബൈ Emirates ID ഉപയോഗിച്ചാൽ, Proof of Address (POA) ചോദിക്കും.<br>
+        ❌ ദുബൈ അഡ്ഡ്രസ് ഉള്ള ഒരു ഡോക്യുമെന്റും <strong>കൊടുക്കരുത്</strong>.<br>
+        ✅ പകരം, നിങ്ങളുടെ <strong>സ്വദേശ അഡ്ഡ്രസ് ഉള്ള ബാങ്ക് സ്റ്റേറ്റ്‌മെന്റ്</strong> (Kerala / India address) സബ്മിറ്റ് ചെയ്യുക.
+      </span>
+    </div>
+
+    <div class="important-step">
+      <div class="step-num">ℹ️ Step 3 — Already a Bybit User?</div>
+      <p>If you already have a Bybit account, you can create a <strong>second account</strong> with a <strong>new email address</strong> and a <strong>new ID</strong> (passport, driver's license, etc.) to access the AED campaigns.</p>
+      <span class="ml-text">
+        ഇതിനകം Bybit-ൽ അക്കൗണ്ട് ഉണ്ടെങ്കിൽ, AED ക്യാമ്പെയ്‌നുകൾ ആക്സസ് ചെയ്യാൻ:<br>
+        ✅ <strong>പുതിയ ഇമെയിൽ</strong> ഉം <strong>പുതിയ ID</strong> (passport, driving licence) ഉം ഉപയോഗിച്ച് Bybit-ൽ ഒരു രണ്ടാമത്തെ അക്കൗണ്ട് ഉണ്ടാക്കാം.<br>
+        ഒരു ഫോണിൽ രണ്ട് അക്കൗണ്ടുകൾ നടത്താം — പ്രശ്‌നമില്ല.
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== QUICK SUMMARY ===== -->
+  <div class="card" style="border-left-color:#48bb78;">
+    <div class="step-label" style="background:#f0fff4;color:#276749;">📋 Quick Summary</div>
+    <h2 style="margin-bottom:12px;">ചുരുക്കത്തിൽ — 3 ലളിതമായ ഘട്ടങ്ങൾ</h2>
+    <ul class="info-list">
+      <li>
+        <div class="icon">1️⃣</div>
+        <div class="text">
+          <p><strong>VPN ഓൺ ചെയ്യുക</strong> → Bybit-ൽ Register ചെയ്യുക</p>
+        </div>
+      </li>
+      <li>
+        <div class="icon">2️⃣</div>
+        <div class="text">
+          <p><strong>400 AED ഡെപ്പോസിറ്റ് ചെയ്യുക</strong> → 200 AED (55 USDT) ഉടനടി കിട്ടും</p>
+        </div>
+      </li>
+      <li>
+        <div class="icon">3️⃣</div>
+        <div class="text">
+          <p><strong>BTC/AED, ETH/AED, SOL/AED, USDT/AED ട്രേഡ് ചെയ്യുക</strong> → 50,000 USDT പ്രൈസ് പൂളിൽ നിന്ന് കൂടുതൽ നേടൂ</p>
+        </div>
+      </li>
+    </ul>
+    <div class="btn-row" style="margin-top:18px;">
+      <a class="cta-btn" href="https://www.bybit.com/en/promo/campaign/MarhabaAED/?affiliate_id=158391&group_id=1770852&group_type=1" target="_blank">
+        🎯 Start Now — ഇപ്പോൾ തുടങ്ങൂ
+      </a>
+      <a class="wa-btn" href="https://wa.me/971582213303" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.557 4.116 1.535 5.845L.057 23.486a.75.75 0 00.959.906l5.85-1.523A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-4.952-1.352l-.355-.21-3.676.957.982-3.589-.231-.368A9.72 9.72 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        സഹായത്തിന് WhatsApp ചെയ്യൂ
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    This guide is for informational purposes only. Crypto trading involves risk.<br>
+    <span class="ml-text">ക്രിപ്‌റ്റോ ട്രേഡിങ്ങിൽ റിസ്‌ക് ഉണ്ട്. നിക്ഷേപം ചെയ്യുന്നതിന് മുൻപ് ശ്രദ്ധാപൂർവ്വം ആലോചിക്കുക.</span>
+  </div>
+
+</div>
+</body>
+</html>
